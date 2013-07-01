@@ -1,10 +1,8 @@
 describe("Game Of Life", function() {
 
-	beforeEach(function() {	  
+	it("need a two dimensional grid", function() {
 	  
+		var result = new Board();
+		expect(result).isDefined();
 	});
-
-	it("it will begin soon Again it OK .......eso mas", function() {
-	  
-	});	
 });
