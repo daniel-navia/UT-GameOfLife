@@ -4,7 +4,7 @@ describe("Game Of Life", function() {
 	  
 	});
 
-	it("it will begin soon", function() {
+	it("it will begin soon at Foundation", function() {
 	  
 	});	
 });
