@@ -9,6 +9,6 @@ describe("Game Of Life Kata", function() {
 	it("in the edges of board no life can exists", function() {
 	  	
 	  	var _board = new Board(2, 2);
-	  	expect(_board.cellAlive()).toBeEqual(0);
+	  	expect(_board.cellAlive()).toEqual(0);
 	});
 });
