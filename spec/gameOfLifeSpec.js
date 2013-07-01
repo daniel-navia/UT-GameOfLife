@@ -4,7 +4,7 @@ describe("Game Of Life", function() {
 	  
 	});
 
-	it("it will begin soon Again it OK", function() {
+	it("it will begin soon Again it OK .......eso mas", function() {
 	  
 	});	
 });
