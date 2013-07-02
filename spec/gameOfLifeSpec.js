@@ -14,8 +14,8 @@ describe("Game Of Life Kata", function() {
 
 	it("any live cell with fewer than two neighbors dies.", function() {
 	  
-	  var _board = new Board(8,8);
-	  expect(_board.cellsAlive()).toEqual(0);
+	  var _board = new Board(3,3);
+	  expect(_board.cellsAlive()).toEqual(1);
 	});
 
 	it("any live cell with more than three neighbors dies.", function() {
