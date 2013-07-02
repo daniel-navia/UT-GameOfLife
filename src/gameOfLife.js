@@ -103,6 +103,52 @@ var Board = (function(){
 				return true;
 			};					
 		};
+
+		this.nextGeneration = function(){
+
+			var board = [];
+			board = initBoard();
+
+			for (var i = 1; i < (_rows - 1); i++) {
+				
+				for (var j = 1; j < (_columns - 1); j++) {
+					
+					var alive = checkNeighbours(i, j);
+
+					if ((alive < 2) || (alive > 3)) {
+
+						board[i*_columns + j].die();
+					}
+					else if (alive == 3) {
+
+						board[i*_columns + j].liveOn();
+					}
+					else if (	((alive == 2) ||
+								(alive == 3)) &&
+								(_board[i*_columns + j].alive())) {
+
+						board[i*_columns + j].liveOn();
+					};
+				};
+			};
+
+			_board = board;
+		};
+
+		function checkNeighbours(coordX, coordY){
+
+			var result = 0;
+
+			for (var i = (coordX - 1); i <= (coordX + 1); i++) {
+				
+				for (var j = (coordY - 1); j <= (coordY + 1); j++) {
+					
+					result += _board[i*_columns + j].alive() && (coordX != i || coordY != j) ? 1 : 0;
+				};
+			};
+
+			return result;
+		};
 	
 	};
 })();
