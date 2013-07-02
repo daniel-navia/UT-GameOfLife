@@ -23,4 +23,9 @@ describe("Game Of Life Kata", function() {
 	  var _board = new Board(10,2);
 	  expect(_board.cellsAlive()).toEqual(0);
 	});	
+    it("Any dead cell with exactly three live neighbours becomes a live cell", function() {
+	  
+	  var _board = new Board(14,14);
+	  expect(_board.cellsAlive()).toEqual(0);
+	});
 });
