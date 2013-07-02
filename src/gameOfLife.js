@@ -40,6 +40,25 @@ var Board = (function(){
 
 			return cont;
 		};
+		
+		this.cellsAlive = function () {
+
+			var cont = 0;
+
+			for (var i = 0; i < _rows * _columns; i++) {
+				
+				if (_board[i].alive()) {
+
+					cont++;
+				};
+			};
+			return cont;
+		};
+
+		function randomGenerator(limit){
+
+			return parseInt(Math.random() * (limit - 1));
+		};
 	
 	};
 })();
