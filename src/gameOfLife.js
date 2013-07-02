@@ -15,7 +15,8 @@ var Board = (function(){
 			for (var i = 0; i < _rows * _columns; i++) {
 				
 				aux.push(new Cell());
-			}
+			};
+
 			return aux;
 		};
 
@@ -101,6 +102,8 @@ var Board = (function(){
 
 			}while(_cell > 0);
 
+			getBoard();
+
 		};
 
 		function positionFree(coordX, coordY){
@@ -148,6 +151,8 @@ var Board = (function(){
 			};
 
 			_board = board;
+
+			getBoard();
 		};
 
 		function checkNeighbours(coordX, coordY){
@@ -164,6 +169,28 @@ var Board = (function(){
 
 			return result;
 		};
+
+		function getBoard() {
+
+			var result;
+
+			for (var i = 0; i < _rows; i++) {
+				
+				result = '';
+
+				for (var j = 0; j < _columns; j++) {
+					
+					result += _board[i*_columns + j].alive() ? ' O' : ' _';
+				};
+
+				console.log(result);
+			};
+		};
+
+		this.showBoard = function () {
+			
+			getBoard();
+		}
 	
 	};
 })();
