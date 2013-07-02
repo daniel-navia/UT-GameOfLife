@@ -40,7 +40,18 @@ describe("Game Of Life Kata", function() {
     
     	it("Any dead cell with exactly three live neighbours becomes a live cell", function() {
 	  
-	  var _board = new Board(14,14);
-	  expect(_board.cellsAlive()).toEqual(0);
+	  var _board = new Board(4,4);
+	  _board.setLife(2,2);
+	  _board.setLife(2,3);
+	  _board.setLife(3,3);
+	  _board.nextGeneration();
+
+	  var _result = new Board(4,4);
+	  _result.setLife(2,2);
+	  _result.setLife(2,3);
+	  _result.setLife(3,2);
+	  _result.setLife(3,3);
+
+	  expect(_board.cellsAlive()).toEqual(_result.cellsAlive());
 	});
 });
