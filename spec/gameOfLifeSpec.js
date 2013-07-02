@@ -20,7 +20,7 @@ describe("Game Of Life Kata", function() {
 
 	it("any live cell with more than three neighbors dies.", function() {
 	  
-	  var _board = new Board(8,8);
+	  var _board = new Board(10,2);
 	  expect(_board.cellsAlive()).toEqual(0);
 	});	
 });
