@@ -4,6 +4,7 @@ var Board = (function(){
 
 		var _rows = isNaN(x) || x < 3 ? 3 : x;
 		var _columns = isNaN(y) || y < 3 ? 3 : y;
+		var _cell = _rows + _columns - 4;
 
 		var _board = [];
 		_board = initBoard();
@@ -58,6 +59,31 @@ var Board = (function(){
 		function randomGenerator(limit){
 
 			return parseInt(Math.random() * (limit - 1));
+		};
+
+		function genereteLife(){
+
+			var coordX;
+			var coordY;
+
+			do{
+
+				coordX = randomGenerator(_rows);
+				coordY = randomGenerator(_columns);
+
+				if (positionFree(coordX, coordY)) {
+
+					_board[coordX*_columns + coordY].liveOn();
+					_cell--;
+					console.log('Row: ' + (coordX + 1) + ', Column: ' + (coordY + 1));
+				}
+				else{
+
+					continue;
+				};
+
+			}while(_cell > 0);
+
 		};
 	
 	};
