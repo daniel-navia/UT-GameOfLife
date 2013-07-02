@@ -85,6 +85,22 @@ var Board = (function(){
 			}while(_cell > 0);
 
 		};
+
+		function positionFree(coordX, coordY){
+
+			if (	coordX == 0 ||
+					coordX >= (_rows - 1) ||
+					coordY == 0 ||
+					coordY >= (_columns - 1) ||
+					_board[coordX*_columns + coordY].alive()) {
+					
+				return false;
+			}
+			else{
+
+				return true;
+			};					
+		};
 	
 	};
 })();
