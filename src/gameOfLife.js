@@ -9,8 +9,6 @@ var Board = (function(){
 		var _board = [];
 		_board = initBoard();
 
-		genereteLife();
-
 		function initBoard(){
 
 			var aux = [];
@@ -63,7 +61,24 @@ var Board = (function(){
 			return parseInt(Math.random() * (limit - 1));
 		};
 
-		function genereteLife(){
+		this.setLife = function(x, y) {
+			
+			if(x >= _rows || x < 2){
+
+				Alert('El valor de fila fuera de limites permitidos');
+				return;
+			};
+
+			if(y >= _columns || y < 2){
+
+				Alert('El valor de columna fuera de limites permitidos');
+				return;
+			};
+
+			_board[((x - 1) * _columns + y) - 1].liveOn();
+		}
+
+		this.genereteLife = function (){
 
 			var coordX;
 			var coordY;
