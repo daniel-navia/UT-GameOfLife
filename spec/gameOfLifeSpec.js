@@ -17,4 +17,10 @@ describe("Game Of Life Kata", function() {
 	  var _board = new Board(8,8);
 	  expect(_board.cellsAlive()).toEqual(0);
 	});
+
+	it("any live cell with more than three neighbors dies.", function() {
+	  
+	  var _board = new Board(8,8);
+	  expect(_board.cellsAlive()).toEqual(0);
+	});	
 });
