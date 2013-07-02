@@ -18,7 +18,7 @@ var Board = (function(){
 			return aux;
 		};
 
-		this.cellAlive = function(){
+		this.cellAliveInTheEdge = function(){
 
 			cont = 0;
 
