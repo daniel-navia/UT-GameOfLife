@@ -4,10 +4,12 @@ var Board = (function(){
 
 		var _rows = isNaN(x) || x < 3 ? 3 : x;
 		var _columns = isNaN(y) || y < 3 ? 3 : y;
-		var _cell = _rows + _columns - 4;
+		var _cell = (_rows + _columns - 4)/2;
 
 		var _board = [];
 		_board = initBoard();
+
+		genereteLife();
 
 		function initBoard(){
 
